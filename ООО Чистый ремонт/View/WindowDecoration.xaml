@@ -1,0 +1,44 @@
+﻿<Window x:Class="ООО_Чистый_ремонт.View.WindowDecoration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ООО_Чистый_ремонт.View"
+        mc:Ignorable="d"
+        Title="Добавить отделку" Height="650" Width="900" Icon="/Resources/logo.ico" MinHeight="650" MinWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FF8ADAE0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="43*"/>
+                <ColumnDefinition Width="199*"/>
+                <ColumnDefinition Width="58*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" TextWrapping="Wrap" Text="Добавить отделку" FontSize="36"/>
+            <Button x:Name="btn_Back" Grid.Column="2" Content="Назад" Click="btn_Back_Click" VerticalAlignment="Center" Height="28" Width="110"/>
+            <Image HorizontalAlignment="Left" Source="/logo.png" Height="70" Margin="19,0,0,0" VerticalAlignment="Top" Width="90"/>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <UniformGrid Grid.Row="1" Columns="2" Rows="9">
+                <TextBlock Text="АйДи "/>
+                <TextBox x:Name="tbID" Width="87"/>
+                <TextBlock Text="Название"/>
+                <TextBox x:Name="tbName" Width="430"/>
+                <TextBlock Text="Описание"/>
+                <TextBox x:Name="tbDesc" Width="430"/>
+                <TextBlock Text="Стоимость за метр квадратный"/>
+                <TextBox x:Name="tbPriceSqM" Width="430"/>
+                <TextBlock Text="Скидка"/>
+                <TextBox x:Name="tbDiscount" Width="430"/>
+                
+            </UniformGrid>
+        </Grid>
+        
+        
+    </Grid>
+</Window>

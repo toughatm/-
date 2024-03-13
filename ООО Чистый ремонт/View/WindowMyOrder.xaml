@@ -1,0 +1,49 @@
+﻿<Window x:Class="ООО_Чистый_ремонт.View.WindowMyOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ООО_Чистый_ремонт.View"
+        mc:Ignorable="d"
+        Title="WindowMyOrder" Height="650" Width="900" Icon="/Resources/logo.ico" MinHeight="650" MinWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FF8ADAE0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="43*"/>
+                <ColumnDefinition Width="199*"/>
+                <ColumnDefinition Width="58*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" TextWrapping="Wrap" Text="Мои заказы" FontSize="36"/>
+            <Button x:Name="btn_Back" Grid.Column="2" Content="Назад" Click="btn_Back_Click" VerticalAlignment="Center" Height="28" Width="110"/>
+            <Image HorizontalAlignment="Left" Source="/logo.png" Height="70" Margin="19,0,0,0" VerticalAlignment="Top" Width="90"/>
+
+        </Grid>
+        <Grid Grid.Row="1" >
+            
+            
+            
+            <ListBox Grid.Row="1" x:Name="lbDecoration">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="ImageDec" Margin="10"  Height="200" Width="200" Source="{Binding Path=IimagePath}"/>
+                            <StackPanel Orientation="Vertical" Width="500">
+                                <TextBlock Text="{Binding Path=decoration.DecorationName}" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding Path=decoration.DecorationDesc}" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding Path=decoration.DecorationPriceSqM, StringFormat='Цена за квадратный метр {0}'}" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding Path=decoration.DecorationDiscountPercent, StringFormat='Скидка в процентах {0}'}" TextWrapping="Wrap" />
+                                <TextBlock Text="{Binding Path=NewPrice, StringFormat='Цена со скидкой {0}'}" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+    </Grid>
+</Window>
